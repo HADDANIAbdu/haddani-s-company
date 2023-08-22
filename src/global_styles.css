@@ -1,0 +1,208 @@
+.menu-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110vh;
+  width: fit-content;
+  display: block;
+  align-items: center;
+  background-color: #aa6c1a;
+  color: White;
+  font-weight: 600;
+}
+.top-menu {
+  list-style: none;
+  display: block;
+  justify-content: center;
+  padding: 0;
+  margin-top: 30px;
+}
+.top-menu li {
+  margin: 0 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.top-menu li a {
+  text-decoration: none;
+  color: White; /* Set your desired text color */
+  font-weight: bold;
+}
+.top-menu li a:hover {
+  color: #ff6600;
+}
+.top-menu li::before {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjust this value to control the distance of the underline from the text */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: #ff6600; /* Set your desired underline color */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.top-menu li:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  list-style: none;
+  display: block;
+  justify-content: center;
+  padding: 0;
+  margin-top: 30px;
+}
+.bottom-menu li {
+  margin: 0 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.bottom-menu svg:hover path {
+  fill: #ff6600;
+}
+.typing-container {
+  width: 100%; /* Set the width of the container */
+  text-align: center; /* Center the text horizontally */
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide overflow */
+}
+
+.typing-animation {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 10px;
+  margin-top: 5px;
+  color: black;
+  border: solid 2px #333;
+  border-radius: 15px;
+  background-color: #ff6600;
+  font-size: 24px;
+  margin-left: 100px;
+  display: inline-block; /* Display as inline block for animation */
+}
+/* Animation for large screens */
+@keyframes typing-large {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}
+/* Animation for small screens */
+@keyframes typing-small {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+.box-container h4 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  padding-left: 10px;
+  margin-top: 5px;
+  color: #ff6600;
+  font-size: large;
+}
+.box {
+  width: calc(40% - 10px);
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding-right: 60px;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+.box:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+.box-1 {
+  width: calc(40% - 10px);
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding-right: 60px;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+.box-1:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+@media screen and (max-width: 1000px) {
+  .typing-animation {
+    animation: typing-small 3s linear infinite;
+  }
+  .box-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    margin-top: -40px;
+  }
+  .box {
+    width: 200px;
+    height: 100px;
+    background-color: #333;
+    color: white;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+  .box-1 {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .typing-animation {
+    animation: typing-large 3s linear infinite;
+  }
+}
+
+/* Media query for small screens */
+
+/* @media screen and (min-width: 760px) {
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .box {
+    width: calc(50% - 10px);
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+} */
